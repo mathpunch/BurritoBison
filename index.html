@@ -14,24 +14,24 @@
     <script>
         // Alert message when the page loads
         window.onload = function() {
-            alert("WAIT 10-5 SECONDS FOR THE GAME TO LOAD");
+            alert("WAIT 10-15 SECONDS FOR THE GAME TO LOAD");
         };
     </script>
 
-    <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "burrito-bison-ll.json", {
-          onProgress: UnityProgress,
-          Module: {
-              onRuntimeInitialized: function() {
-                  UnityProgress(gameInstance, "complete");
-              }
-          }
-      });
-    </script>
-
-    <div class="webgl-content">
-        <div id="gameContainer" style="width: 100%; height: 100%; margin: auto"></div>
+    <div class="webgl-content" style="width: 100%; height: 100vh;">
+        <div id="gameContainer" style="width: 100%; height: 100%; margin: auto;"></div>
     </div>
+
+    <script>
+        var gameInstance = UnityLoader.instantiate("gameContainer", "burrito-bison-ll.json", {
+            onProgress: UnityProgress,
+            Module: {
+                onRuntimeInitialized: function() {
+                    UnityProgress(gameInstance, "complete");
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
